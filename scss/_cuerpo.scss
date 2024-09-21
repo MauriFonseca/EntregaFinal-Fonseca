@@ -1,0 +1,36 @@
+main {
+    background-color: map-get($map: $colors , $key: main-color);
+        .tabla_presupuesto{
+            background-color: map-get($map: $colors , $key: backtabla);
+            border: 2px solid #000000;
+            margin: 3% 1% 0 1%;
+        }
+        .btn {
+            border-radius: 50%;
+            border-color: black;
+            padding: 10px;
+        }
+        ul li {
+            display: flex;
+            list-style: none;
+            border: solid 1px black;
+            padding: 5px;
+            width: 100%;
+            div {
+                display: flex;
+                flex-direction: row;
+                margin: 0 1px 0 0;
+                justify-content: center;
+                align-items: center;
+            
+            input {
+                width: 10%;
+                height: 30px;
+                &:hover {
+                    background-color: map-get($map: $colors , $key: hover-tabla);
+                }
+            }
+        }
+        }
+    }
+

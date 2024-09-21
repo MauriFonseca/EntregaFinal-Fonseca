@@ -1,0 +1,15 @@
+header {
+    background-color: map-get($map: $colors , $key: header-color);
+    text-align: center;
+    &:hover{
+        background-color: map-get($map: $colors , $key: hover-header);
+    }
+}
+a {
+    text-decoration: none;
+    color: map-get($map: $colors, $key: enlace);
+}
+.title{
+    text-align: center;
+    padding: 10px 0;
+}
