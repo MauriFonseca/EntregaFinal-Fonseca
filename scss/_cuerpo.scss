@@ -7,9 +7,10 @@ main {
         }
         .meses_presupuesto{
             display: flex;
+            flex-direction: row;
             position: absolute;
             top: 23%;
-            right: 55%;
+            right: 55%; 
             p{
                 padding: 0 7%;
             }
