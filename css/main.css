@@ -33,12 +33,10 @@ main .tabla_presupuesto {
 main .meses_presupuesto {
   display: flex;
   flex-direction: row;
+  gap: 14%;
   position: absolute;
   top: 23%;
   right: 55%;
-}
-main .meses_presupuesto p {
-  padding: 0 7%;
 }
 main .btn {
   border-radius: 50%;

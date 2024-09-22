@@ -8,12 +8,10 @@ main {
         .meses_presupuesto{
             display: flex;
             flex-direction: row;
+            gap: 14%;
             position: absolute;
             top: 23%;
-            right: 55%; 
-            p{
-                padding: 0 7%;
-            }
+            right: 55%;
         }
         .btn {
             border-radius: 50%;
