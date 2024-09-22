@@ -30,14 +30,6 @@ main .tabla_presupuesto {
   border: 1px solid #000000;
   margin: 3% 1% 0 1%;
 }
-main .meses_presupuesto {
-  display: flex;
-  flex-direction: row;
-  gap: 14%;
-  position: absolute;
-  top: 23%;
-  right: 55%;
-}
 main .btn {
   border-radius: 50%;
   border-color: black;
