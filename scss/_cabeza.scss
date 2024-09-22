@@ -1,8 +1,8 @@
 header {
-    background-color: map-get($map: $colors , $key: header-color);
+    background: linear-gradient(0deg, #b8d7d2  30%, #1b6c73 70%);
     text-align: center;
     &:hover{
-        background-color: map-get($map: $colors , $key: hover-header);
+        background: linear-gradient(0deg, #b8d7d2  10%, #1b6c73 90%);
     }
 }
 a {

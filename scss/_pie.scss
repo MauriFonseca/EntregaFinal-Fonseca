@@ -1,3 +1,24 @@
 footer {
-    background-color: map-get($map: $colors , $key: footer-color);
+    background: linear-gradient(0deg, #1b6c73 10%, #b8d7d2 90%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .foot {
+        justify-content: center;
+        align-items: center;
+    .img_foot{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 2%;
+        justify-content: center;
+        .size-item{
+            width: 15%;
+            &:hover {
+                color: map-get($map: $colors , $key: hover-header);
+            }
+        }   
+    }
+}
 }

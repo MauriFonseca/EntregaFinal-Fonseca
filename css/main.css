@@ -5,11 +5,11 @@
 }
 
 header {
-  background-color: #abc4ce;
+  background: linear-gradient(0deg, #b8d7d2 30%, #1b6c73 70%);
   text-align: center;
 }
 header:hover {
-  background-color: rgba(95, 1, 95, 0.564);
+  background: linear-gradient(0deg, #b8d7d2 10%, #1b6c73 90%);
 }
 
 a {
@@ -27,8 +27,17 @@ main {
 }
 main .tabla_presupuesto {
   background-color: #29a3a3;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
   margin: 3% 1% 0 1%;
+}
+main .meses_presupuesto {
+  display: flex;
+  position: absolute;
+  top: 23%;
+  right: 55%;
+}
+main .meses_presupuesto p {
+  padding: 0 7%;
 }
 main .btn {
   border-radius: 50%;
@@ -39,7 +48,7 @@ main ul li {
   display: flex;
   list-style: none;
   border: solid 1px black;
-  padding: 5px;
+  padding: 2px;
   width: 100%;
 }
 main ul li div {
@@ -50,15 +59,36 @@ main ul li div {
   align-items: center;
 }
 main ul li div input {
-  width: 10%;
+  width: 8%;
   height: 30px;
 }
 main ul li div input:hover {
-  background-color: rgba(184, 163, 234, 0.949);
+  background-color: rgba(173, 218, 236, 0.949);
 }
 
 footer {
-  background-color: #1b6c73;
+  background: linear-gradient(0deg, #1b6c73 10%, #b8d7d2 90%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+footer .foot {
+  justify-content: center;
+  align-items: center;
+}
+footer .foot .img_foot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 2%;
+  justify-content: center;
+}
+footer .foot .img_foot .size-item {
+  width: 15%;
+}
+footer .foot .img_foot .size-item:hover {
+  color: rgba(95, 1, 95, 0.564);
 }
 
 /*# sourceMappingURL=main.css.map */
