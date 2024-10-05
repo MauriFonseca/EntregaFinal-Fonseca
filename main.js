@@ -1,6 +1,6 @@
 //INGRESOS
 const ingresos = ["Fuente ingreso 1", "Fuente ingreso 2", "Suma ingresos"]
-const listaDesordenada = document.querySelector("ul")
+const listaDesordenada = document.querySelector("#listaIngresos")
 const elementoIngresos = []
 const inputsFuente1 = []
 const inputsFuente2 = []
@@ -44,7 +44,7 @@ input.addEventListener("input", calcularSuma)
 })
 //GASTOS
 const gastos = ["Ahorro mensual", "Alquiler", "Transporte", "Tarjeta de crédito principal", "Tarjeta de crédito secundaria", "Seguros contratados", "Luz y agua", "Telefonía", "Internet", "Educación", "Suma Gastos"]
-const listaDesordenadaDos = document.querySelector("ul")
+const listaDesordenadaDos = document.querySelector("#listaGastos")
 const elementoGastos = []
 const inputsGastos = []
 const inputsSumaDos = []
@@ -87,11 +87,55 @@ inputsGastos.forEach((inputArray) => {
     input.addEventListener("input", calcularSumaDos)
   })
 })
-//Identificacion del usuario  
-const inputTextField = document.getElementById ("identificacionUsuario")
+//Identificacion del usuario 
+const inputTextField = document.getElementById("identificacionUsuario")
 const boton = document.getElementById('inicio')
-inputTextField.addEventListener("change", function(){
-    boton.style.backgroundColor = "#13e813"
+inputTextField.addEventListener("change", function() {
     const valor = inputTextField.value
-    localStorage.setItem('Nombre del usuario', valor)
+    if (valor.trim() !== "") {
+        boton.style.backgroundColor = "#13e813"
+        localStorage.setItem('Nombre del usuario', valor)
+    }
 })
+boton.addEventListener("click", function() {
+    const valor = inputTextField.value
+    const inputNumbers = document.querySelectorAll('input[type="number"]')
+    const hayNumeroRellenado = Array.from(inputNumbers).some(input => input.value.trim() !== "")
+    if (valor.trim() !== "" || hayNumeroRellenado) {
+        inputNumbers.forEach(function(input) {
+            input.style.backgroundColor = "#ffffff"
+        })
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Nos falto un pasito",
+        text: "Completar campo identificacion :)",
+      });
+    }
+})
+//Eleccion del año
+async function seleccionarAño() {
+  const inputOptions = new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        "2025": "2025",
+        "2026": "2026",
+        "2027": "2027",
+      })
+    }, 2000)
+  })
+  const { value: año } = await Swal.fire({
+    title: "Bienvenido/a seleccionemos un año para presupuestar",
+    input: "radio",
+    inputOptions,
+    inputValidator: (value) => {
+      if (!value) {
+        return "Por favor elegir un año a presupuestar"
+      }
+    }
+  })
+  if (año) {
+    Swal.fire({ html: `Comencemos con tu presupuesto para el año ${año}` })
+  }
+}
+seleccionarAño()
