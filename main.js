@@ -29,14 +29,12 @@ function crearListaPresupuesto(elementos, listaDesordenada, inputsArray1, inputs
 const listaDesordenadaIngresos = document.querySelector("#listaIngresos")
 const listaDesordenadaGastos = document.querySelector("#listaGastos")
 const listaDesordenadaBalance = document.querySelector("#listaBalance")
-
 const inputsFuente1 = []
 const inputsFuente2 = []
 const inputsSumaIngresos = []
 const inputsGastos = []
 const inputsSumaGastos = []
 const inputsBalance = []
-  
 crearListaPresupuesto(ingresos, listaDesordenadaIngresos, inputsFuente1, inputsFuente2, inputsSumaIngresos)
 crearListaPresupuesto(gastos, listaDesordenadaGastos, inputsGastos, null, inputsSumaGastos, false)
 //BCE
@@ -81,6 +79,13 @@ function calcularBalance() {
       const sumaIngresos = parseFloat(inputsSumaIngresos[i].value) || 0
       const sumaGastos = parseFloat(inputsSumaGastos[i].value) || 0
       inputsBalance[i].value = sumaIngresos - sumaGastos
+      if (sumaIngresos < sumaGastos) {
+        Swal.fire({
+            icon: "warning",
+            title: "Cuidado",
+            text: `La relacion de tus gastos e ingresos parece no ser coherente, por favor verifica`,
+        })
+}
 }
 }
 inputsFuente1.forEach((input) => input.addEventListener("input", calcularSumaIngresos))
