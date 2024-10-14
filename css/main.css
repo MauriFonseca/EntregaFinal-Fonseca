@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -22,6 +23,7 @@ a {
   text-align: center;
   padding: 1% 0;
   margin-bottom: 0rem;
+  font-size: 2em;
 }
 
 main {
@@ -36,6 +38,25 @@ main .btn {
 main #identificacionUsuario {
   width: 12%;
   margin: 0 1% 0 2%;
+  background-color: #ffffff;
+}
+main .preciosCripto {
+  display: table;
+  position: absolute;
+  z-index: 1;
+  left: 75%;
+  top: 4%;
+  font-size: 1.5rem;
+  border: solid 2px black;
+}
+main .preciosCripto #precios {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 1px black;
+}
+main #listaIngresos {
+  margin-top: 1em;
 }
 main .tabla_presupuesto {
   background: linear-gradient(0deg, #b8d7d2 30%, #1b6c73 70%);
@@ -61,6 +82,21 @@ main div {
   flex-direction: row;
   padding: 0 0;
   justify-content: right;
+}
+main #añoSeleccionado {
+  position: relative;
+  left: 2%;
+  width: 20%;
+  justify-content: center;
+  text-align: center;
+  margin-top: 0.8em;
+  padding-top: 0.1em;
+  font-size: 2rem;
+  border-radius: 4%;
+  color: #000000;
+}
+main #añoSeleccionado:hover {
+  background: linear-gradient(0deg, #b8d7d2 20%, #1b6c73 80%);
 }
 
 footer {
